@@ -5,7 +5,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HashTags implements ITweetAlg<IHashTags> {
-
 	final static Pattern hashTag = Pattern.compile("#[a-zA-Z0-9_]+");
 	
 	@Override
