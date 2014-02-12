@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tweet.objalg.base.IHashtags;
-import tweet.objalg.base.ITweetAlg;
 import tweet.objalg.print_and_hashtags.IPrintAndHashtags;
 
 public class Main {
@@ -23,10 +22,6 @@ public class Main {
 		for (String tag: tags) {
 			System.out.println(tag);
 		}
-	}
-	
-	static <X> X makeTweet(ITweetAlg<X> alg) {
-		return alg.tweet("JoyOfCoding", "#Hello #world!");
 	}
 	
 	static void print(IPrintAndHashtags ph) {

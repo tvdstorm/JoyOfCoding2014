@@ -2,17 +2,15 @@ package tweet.objalg.base;
 
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import static java.util.regex.Pattern.compile;
 
 public class Hashtags implements ITweetAlg<IHashtags> {
-	final static Pattern hashTag = Pattern.compile("#[a-zA-Z0-9_]+");
-	
 	@Override
 	public IHashtags tweet(String user, final String text) {
 		return new IHashtags() {
 			@Override
 			public void hashtags(List<String> tags) {
-				Matcher m = hashTag.matcher(text);
+				Matcher m = compile("#[a-zA-Z0-9_]+").matcher(text);
 				while (m.find())  
 					tags.add(m.group());
 			}
@@ -28,5 +26,4 @@ public class Hashtags implements ITweetAlg<IHashtags> {
 			}
 		};
 	}
-
 }

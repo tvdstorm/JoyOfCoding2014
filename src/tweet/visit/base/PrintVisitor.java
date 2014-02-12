@@ -11,5 +11,4 @@ public class PrintVisitor implements IVisitor<String> {
 	public String visit(Reply reply) {
 		return "@" + reply.getTo() + " " +  reply.accept(this);
 	}
-
 }

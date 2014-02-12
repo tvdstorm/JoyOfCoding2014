@@ -1,6 +1,5 @@
-package tweet.interp.hashtags;
+package tweet.interp.size;
 
-import java.util.List;
 
 public class Reply implements ITweet {
 	private String to;
@@ -17,8 +16,9 @@ public class Reply implements ITweet {
 	}
 
 	@Override
-	public void hashTags(List<String> tags) {
-		tweet.hashTags(tags);
+	public int size() {
+		return 1 + to.length() + tweet.size();
 	}
+
 
 }

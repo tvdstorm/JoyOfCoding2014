@@ -1,8 +1,6 @@
-package tweet.interp.rt_and_htags;
+package tweet.interp.retweet_with_size;
 
-import java.util.List;
-
-import tweet.interp.hashtags.ITweet;
+import tweet.interp.size.ITweet;
 
 public class Retweet implements ITweet {
 	private ITweet tweet;
@@ -17,9 +15,8 @@ public class Retweet implements ITweet {
 	}
 
 	@Override
-	public void hashTags(List<String> tags) {
-		tweet.hashTags(tags);
+	public int size() {
+		return 3 + tweet.size();
 	}
 
-	
 }
