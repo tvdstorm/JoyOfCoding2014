@@ -2,16 +2,16 @@ package tweet.objalg.retweet;
 
 import java.util.List;
 
-import tweet.objalg.base.IHashTags;
+import tweet.objalg.base.IHashtags;
 
-public class HashTags extends tweet.objalg.base.HashTags implements RetweetAlg<IHashTags> {
+public class Hashtags extends tweet.objalg.base.Hashtags implements IRetweetAlg<IHashtags> {
 	@Override
-	public IHashTags retweet(final IHashTags tweet) {
-		return new IHashTags() {
+	public IHashtags retweet(final IHashtags tweet) {
+		return new IHashtags() {
 			
 			@Override
-			public void hashTags(List<String> tags) {
-				tweet.hashTags(tags);
+			public void hashtags(List<String> tags) {
+				tweet.hashtags(tags);
 			}
 		};
 	}

@@ -14,9 +14,9 @@ public class Main {
 	}
 	
 	static void hashTags() {
-		IHashTags t = makeTweet(new HashTags());
+		IHashtags t = makeTweet(new Hashtags());
 		List<String> tags = new ArrayList<>();
-		t.hashTags(tags);
+		t.hashtags(tags);
 		for (String tag: tags) {
 			System.out.println(tag);
 		}

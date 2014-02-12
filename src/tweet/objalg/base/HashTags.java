@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HashTags implements ITweetAlg<IHashTags> {
+public class Hashtags implements ITweetAlg<IHashtags> {
 	final static Pattern hashTag = Pattern.compile("#[a-zA-Z0-9_]+");
 	
 	@Override
-	public IHashTags tweet(String user, final String text) {
-		return new IHashTags() {
+	public IHashtags tweet(String user, final String text) {
+		return new IHashtags() {
 			@Override
-			public void hashTags(List<String> tags) {
+			public void hashtags(List<String> tags) {
 				Matcher m = hashTag.matcher(text);
 				while (m.find())  
 					tags.add(m.group());
@@ -20,11 +20,11 @@ public class HashTags implements ITweetAlg<IHashTags> {
 	}
 
 	@Override
-	public IHashTags reply(String to , final IHashTags tweet) {
-		return new IHashTags() {
+	public IHashtags reply(String to , final IHashtags tweet) {
+		return new IHashtags() {
 			@Override
-			public void hashTags(List<String> tags) {
-				tweet.hashTags(tags);
+			public void hashtags(List<String> tags) {
+				tweet.hashtags(tags);
 			}
 		};
 	}
