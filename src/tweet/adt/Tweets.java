@@ -3,9 +3,9 @@ package tweet.adt;
 public class Tweets {
 	public interface ITweet {}
 
-	static class Tweet implements ITweet {
+	static class Post implements ITweet {
 		String user, text;
-		Tweet(String user, String text) { 
+		Post(String user, String text) { 
 			this.user = user; 
 			this.text = text; 
 		}
@@ -21,7 +21,7 @@ public class Tweets {
 	}
 	
 	public static ITweet tweet(String user, String text) {
-		return new Tweet(user, text);
+		return new Post(user, text);
 	}
 	
 	public static ITweet reply(String to, ITweet tweet) {
@@ -30,7 +30,7 @@ public class Tweets {
 
 	
 	public static String print(ITweet tweet) {
-		if (tweet instanceof Tweet) {
+		if (tweet instanceof Post) {
 			return getText(tweet) + " (" + getUser(tweet) + ")";
 		}
 		if (tweet instanceof Reply) {
@@ -41,8 +41,8 @@ public class Tweets {
 
 	
 	public static String getUser(ITweet tweet) {
-		if (tweet instanceof Tweet) {
-			return ((Tweet)tweet).user;
+		if (tweet instanceof Post) {
+			return ((Post)tweet).user;
 		}
 		if (tweet instanceof Reply) {
 			return getUser(((Reply)tweet).tweet);
@@ -51,8 +51,8 @@ public class Tweets {
 	}
 	
 	public static String getText(ITweet tweet) {
-		if (tweet instanceof Tweet) {
-			return ((Tweet)tweet).text;
+		if (tweet instanceof Post) {
+			return ((Post)tweet).text;
 		}
 		if (tweet instanceof Reply) {
 			return getText(((Reply)tweet).tweet);

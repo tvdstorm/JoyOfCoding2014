@@ -14,9 +14,9 @@ public class PrintAndSize implements ITweetAlg<IPrintAndSize> {
 	}
 	
 	@Override
-	public IPrintAndSize tweet(String user, String text) {
-		final IPrint p = print.tweet(user,  text);
-		final ISize s = size.tweet(user,  text);
+	public IPrintAndSize post(String user, String text) {
+		final IPrint p = print.post(user,  text);
+		final ISize s = size.post(user,  text);
 		return new IPrintAndSize() {
 			@Override
 			public int size() { return s.size(); }

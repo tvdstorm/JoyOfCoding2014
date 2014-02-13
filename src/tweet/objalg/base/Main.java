@@ -6,11 +6,13 @@ import java.util.List;
 public class Main {
 	
 	static <X> X makeTweet(ITweetAlg<X> alg) {
-		return alg.tweet("JoyOfCoding", "#Hello #world!");
+		return alg.post("JoyOfCoding", "#Hello #world!");
 	}
 	
 	static void print() {
-		System.out.println(makeTweet(new Print()).print());
+		ITweetAlg<IPrint> alg = new Print();
+		IPrint printable = alg.post("tvdstorm", "Hello @JoyOfCoding!");
+		System.out.println(printable.print());
 	}
 	
 	static void size() {

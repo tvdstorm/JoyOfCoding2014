@@ -2,7 +2,7 @@ package tweet.adt;
 
 public class Size extends Tweets {
 	public static int size(ITweet tweet) {
-		if (tweet instanceof Tweet) {
+		if (tweet instanceof Post) {
 			return getText(tweet).length();
 		}
 		if (tweet instanceof Reply) {

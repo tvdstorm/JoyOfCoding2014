@@ -1,11 +1,11 @@
 package tweet.interp.base;
 
-public class Tweet implements ITweet {
+public class Post implements ITweet {
 
 	private String user;
 	private String text;
 
-	public Tweet(String user, String text) {
+	public Post(String user, String text) {
 		this.user = user;
 		this.text = text;
 	}

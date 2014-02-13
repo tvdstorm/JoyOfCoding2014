@@ -3,7 +3,7 @@ package tweet.visit.base;
 
 public class PrintVisitor implements IVisitor<String> {
 	@Override
-	public String visit(Tweet tweet) {
+	public String visit(Post tweet) {
 		return tweet.getText() + " (" + tweet.getUser() + ")";
 	}
 

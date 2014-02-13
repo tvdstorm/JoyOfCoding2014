@@ -12,7 +12,7 @@ import tweet.objalg.print_and_hashtags.PrintAndHashtags;
 
 public class Main {
 	static <X> X makeTweet(ITweetAlg<X> alg) {
-		return alg.tweet("JoyOfCoding", "#Hello #world!");
+		return alg.post("JoyOfCoding", "#Hello #world!");
 	}
 	
 	static void print(IPrintAndHashtags ph) {

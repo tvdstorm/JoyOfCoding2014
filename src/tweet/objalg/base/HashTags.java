@@ -6,7 +6,7 @@ import static java.util.regex.Pattern.compile;
 
 public class Hashtags implements ITweetAlg<IHashtags> {
 	@Override
-	public IHashtags tweet(String user, final String text) {
+	public IHashtags post(String user, final String text) {
 		return new IHashtags() {
 			@Override
 			public void hashtags(List<String> tags) {

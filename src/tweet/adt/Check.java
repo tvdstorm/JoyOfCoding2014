@@ -3,7 +3,7 @@ package tweet.adt;
 
 public class Check extends Tweets {
 	public static boolean check(ITweet tweet) {
-		if (tweet instanceof Tweet) {
+		if (tweet instanceof Post) {
 			return getText(tweet).length() <= 140;
 		}
 		if (tweet instanceof Reply) {

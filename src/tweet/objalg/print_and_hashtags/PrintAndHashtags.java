@@ -16,9 +16,9 @@ public class PrintAndHashtags implements ITweetAlg<IPrintAndHashtags> {
 	}
 	
 	@Override
-	public IPrintAndHashtags tweet(String user, String text) {
-		final IPrint p = print.tweet(user,  text);
-		final IHashtags h = hashtags.tweet(user,  text);
+	public IPrintAndHashtags post(String user, String text) {
+		final IPrint p = print.post(user,  text);
+		final IHashtags h = hashtags.post(user,  text);
 		return new IPrintAndHashtags() {
 			@Override
 			public void hashtags(List<String> tags) {

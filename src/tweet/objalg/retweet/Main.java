@@ -1,18 +1,27 @@
 package tweet.objalg.retweet;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import tweet.objalg.base.IHashtags;
+import tweet.objalg.base.IPrint;
+import tweet.objalg.base.ITweetAlg;
 import tweet.objalg.print_and_hashtags.IPrintAndHashtags;
 
 public class Main {
 	static <X> X makeTweet(IRetweetAlg<X> alg) {
-		return alg.retweet(alg.tweet("JoyOfCoding", "#Hello #world!"));
+		return alg.retweet(alg.post("JoyOfCoding", "#Hello #world!"));
 	}
 	
 	static void print() {
 		System.out.println(makeTweet(new Print()).print());
+	}
+	
+	static void print2() {
+		IRetweetAlg<IPrint> alg = new tweet.objalg.retweet.Print();
+		IPrint printable = alg.retweet(alg.post("JoyOfCoding", "#Hello #world!"));
+		System.out.println(printable.print());
 	}
 	
 	static void hashTags() {

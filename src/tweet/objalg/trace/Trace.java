@@ -30,8 +30,8 @@ public class Trace implements ITweetAlg<IPrintAndHashtags> {
 	}
 	
 	@Override
-	public IPrintAndHashtags tweet(String user, String text) {
-		return trace(printAndHashtags.tweet(user, text));
+	public IPrintAndHashtags post(String user, String text) {
+		return trace(printAndHashtags.post(user, text));
 	}
 
 	@Override

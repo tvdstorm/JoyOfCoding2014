@@ -3,7 +3,7 @@ package tweet.visit.base;
 
 public class SizeVisitor implements IVisitor<Integer> {
 	@Override
-	public Integer visit(Tweet tweet) {
+	public Integer visit(Post tweet) {
 		return tweet.getText().length();
 	}
 

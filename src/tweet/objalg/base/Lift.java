@@ -2,11 +2,11 @@ package tweet.objalg.base;
 
 public class Lift implements ITweetAlg<IBuild> {
 	@Override
-	public IBuild tweet(final String user, final String text) {
+	public IBuild post(final String user, final String text) {
 		return new IBuild() {
 			@Override
 			public <X> X build(ITweetAlg<X> alg) {
-				return alg.tweet(user, text);
+				return alg.post(user, text);
 			}
 		};
 	}
