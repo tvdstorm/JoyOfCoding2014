@@ -17,6 +17,12 @@ public class Main {
 		System.out.println(makeTweet(new Size()).size());
 	}
 	
+	static void lift() {
+		IBuild t = makeTweet(new Lift());
+		System.out.println(t.build(new Print()).print());
+		System.out.println(t.build(new Size()).size());
+	}
+	
 	static void hashTags() {
 		IHashtags t = makeTweet(new Hashtags());
 		List<String> tags = new ArrayList<>();
@@ -30,5 +36,6 @@ public class Main {
 		print();
 		size();
 		hashTags();
+		lift();
 	}
 }
