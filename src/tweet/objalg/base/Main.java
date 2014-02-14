@@ -15,6 +15,16 @@ public class Main {
 		System.out.println(printable.print());
 	}
 	
+	static void printAndSize() {
+		ITweetAlg<IPrint> alg1 = new Print();
+		IPrint printable = alg1.post("tvdstorm", "Hello @JoyOfCoding!");
+		printable.print();
+		
+		ITweetAlg<ISize> alg2 = new Size();
+		ISize sizable = alg2.post("tvdstorm", "Hello @JoyOfCoding!");
+		sizable.size();
+	}
+	
 	static void size() {
 		System.out.println(makeTweet(new Size()).size());
 	}

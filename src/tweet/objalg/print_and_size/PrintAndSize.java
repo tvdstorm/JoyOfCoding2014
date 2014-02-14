@@ -13,30 +13,18 @@ public class PrintAndSize implements ITweetAlg<IPrintAndSize> {
 		this.size = size;
 	}
 	
-	@Override
-	public IPrintAndSize post(String user, String text) {
-		final IPrint p = print.post(user,  text);
-		final ISize s = size.post(user,  text);
+	private IPrintAndSize combine(final IPrint p, final ISize s) {
 		return new IPrintAndSize() {
-			@Override
 			public int size() { return s.size(); }
-			
-			@Override
 			public String print() { return p.print(); }
 		};
 	}
-
-	@Override
-	public IPrintAndSize reply(String to, IPrintAndSize tweet) {
-		final IPrint p = print.reply(to,  tweet);
-		final ISize s = size.reply(to, tweet);
-		return new IPrintAndSize() {
-			@Override
-			public int size() { return s.size(); }
-			
-			@Override
-			public String print() { return p.print(); }
-		};
+	
+	public IPrintAndSize post(String u, String t) {
+		return combine(print.post(u, t), size.post(u, t));
 	}
 
+	public IPrintAndSize reply(String to, IPrintAndSize tw) {
+		return combine(print.reply(to,  tw), size.reply(to, tw));
+	}
 }

@@ -21,10 +21,12 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		Print p = new Print();
-		Size s = new Size();
-		IPrintAndSize ph = makeTweet(new PrintAndSize(p, s));
-		print(ph);
-		size(ph);
+		IPrintAndSize ps = 
+			new PrintAndSize(new Print(), new Size())
+				.post("JoyOfCoding", "#Hello #world!");
+		ps.print();
+		ps.size();
+		print(ps);
+		size(ps);
 	}
 }
