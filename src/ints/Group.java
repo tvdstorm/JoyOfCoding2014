@@ -1,6 +1,5 @@
 package ints;
 
-public interface Group<X> {
-	X zero();
-	X add(X a, X b);
+interface Group<S> extends Monoid<S> {
+	S neg(S s);
 }
